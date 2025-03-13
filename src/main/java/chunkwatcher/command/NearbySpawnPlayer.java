@@ -26,11 +26,10 @@ public class NearbySpawnPlayer implements CommandExecutor {
         for(Player nbyPlayer : player.getWorld().getPlayers() ) {
             if(nbyPlayer.equals(playerLocation)) {
                 player.sendMessage("Someone nearby: " + nbyPlayer.getName());
+                Location pLocation = nbyPlayer.getLocation();
+                player.sendMessage("Player location is: " + "X" + (int)pLocation.x() + "\nY" + (int)pLocation.y() + "\nZ" + (int)pLocation.z() );
                 found = true;
             }
-
-            Location pLocation = nbyPlayer.getLocation();
-            player.sendMessage("Player location is: " + "X" + (int)pLocation.x() + "\nY" + (int)pLocation.y() + "\nZ" + (int)pLocation.z() );
         }
         return found;
     }
