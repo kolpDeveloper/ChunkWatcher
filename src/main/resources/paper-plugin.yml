@@ -1,4 +1,6 @@
 name: ChunkWatcher
 version: '1.0-SNAPSHOT'
-main: chunkwatcher.kz
+main: chunkwatcher.main
 api-version: '1.20'
+author: eblxd
+description: Плагин для управления и защиты чанков на сервере.
