@@ -1,0 +1,4 @@
+name: ChunkWatcher
+version: '1.0-SNAPSHOT'
+main: chunkwatcher.kz
+api-version: '1.20'
