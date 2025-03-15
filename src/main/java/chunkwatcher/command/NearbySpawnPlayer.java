@@ -4,13 +4,15 @@ import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
+
 public class NearbySpawnPlayer implements CommandExecutor {
 
-    public static final double RADIUS = 100.0;
-
+    public static final double RADIUS = 20.0;
 
     @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String label, @NotNull String[] strings) {
@@ -19,18 +21,32 @@ public class NearbySpawnPlayer implements CommandExecutor {
             return true;
         }
 
-        Location playerLocation = player.getLocation();
-        player.sendMessage("Finding players within " + RADIUS + " blocks");
-
         boolean found = false;
-        for(Player nbyPlayer : player.getWorld().getPlayers() ) {
+
+        ArrayList<Entity> entities = (ArrayList<Entity>)player.getNearbyEntities(RADIUS, RADIUS, RADIUS);
+            if(entities.isEmpty()) {
+                commandSender.sendMessage("No entities found");
+            }
+            else {
+                player.sendMessage("Found " + entities.size() + " entities");
+                for(Entity entity : entities)
+                {
+                    player.sendMessage(entity.getType().toString());
+                    found = true;
+                }
+            }
+
+       /* Location playerLocation = player.getLocation();
+        player.sendMessage("Finding players within " + RADIUS + " blocks");*/
+
+        /*for(Player nbyPlayer : player.getWorld().getPlayers() ) {
             if(nbyPlayer.equals(playerLocation)) {
                 player.sendMessage("Someone nearby: " + nbyPlayer.getName());
                 Location pLocation = nbyPlayer.getLocation();
                 player.sendMessage("Player location is: " + "X" + (int)pLocation.x() + "\nY" + (int)pLocation.y() + "\nZ" + (int)pLocation.z() );
                 found = true;
             }
-        }
+        }*/
         return found;
     }
 

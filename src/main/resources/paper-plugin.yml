@@ -3,4 +3,26 @@ version: '1.0-SNAPSHOT'
 main: chunkwatcher.main
 api-version: '1.20'
 author: eblxd
-description: Плагин для управления и защиты чанков на сервере.
+description: Плагин для управления и защиты чанков на сервере с дополнительным функционалом.
+
+
+commands:
+  nearbyspawn:
+    description: Показывает какие живые сущности находятся поблизости.
+    usage: /nearby
+    permission: chunkwatcher.nearbyspawn
+  worldinfo:
+    description: Bыводит информацию о мирах в чат.
+    usage: /world
+    permission: chunkwatcher.worldinfo
+
+
+
+permission:
+  chunkwatcher.nearbyspawn:
+    description: Разрешает использовать команду /nearby.
+    default: true
+  chunkwatcher.worldinfo:
+    description: Выводит информацию о мирах в чат.
+    default: true
+
