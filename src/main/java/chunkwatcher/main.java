@@ -4,8 +4,7 @@ import chunkwatcher.command.NearbySpawnPlayer;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class main extends JavaPlugin {
-
-    NearbySpawnPlayer nearbySpawnPlayer;
+    
 
 
 
