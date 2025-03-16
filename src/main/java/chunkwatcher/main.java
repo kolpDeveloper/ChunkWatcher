@@ -19,14 +19,4 @@ public final class main extends JavaPlugin {
     public void onDisable() {
         // Plugin shutdown logic
     }
-
-    public static void main(String[] args) {
-
-        LinkedList<Integer> l = new LinkedList<>();
-        l.add(1);
-        l.add(2);
-        for (int i = 0; i < l.getLast(); i++) {
-
-        }
-    }
 }
