@@ -45,8 +45,7 @@ public class WorldInfo implements CommandExecutor {
                             e.getFullTime(),
                             e.getName(),
                             e.getGameTime(),
-                            e.getPVP(),
-                            e.getGameTime()
+                            e.getPVP()
                 ))
                 .collect(Collectors.toList());
 

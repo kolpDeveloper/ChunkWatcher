@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
-public class NearbySpawnPlayer implements CommandExecutor {
+public class NearbyEntities implements CommandExecutor {
 
     public static final double RADIUS = 20.0;
 
@@ -35,23 +35,6 @@ public class NearbySpawnPlayer implements CommandExecutor {
                 }
             }
 
-       /* Location playerLocation = player.getLocation();
-        player.sendMessage("Finding players within " + RADIUS + " blocks");*/
-
-        /*for(Player nbyPlayer : player.getWorld().getPlayers() ) {
-            if(nbyPlayer.equals(playerLocation)) {
-                player.sendMessage("Someone nearby: " + nbyPlayer.getName());
-                Location pLocation = nbyPlayer.getLocation();
-                player.sendMessage("Player location is: " + "X" + (int)pLocation.x() + "\nY" + (int)pLocation.y() + "\nZ" + (int)pLocation.z() );
-                found = true;
-            }
-        }*/
         return found;
     }
-
-
-
-
-
-    public void nearbySpawnPlayer() {}
 }
