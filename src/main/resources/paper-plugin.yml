@@ -15,6 +15,10 @@ commands:
     description: Bыводит информацию о мирах в чат.
     usage: /world
     permission: chunkwatcher.worldinfo
+  chunkinfo:
+      description: Bыводит информацию о чанке в чат.
+      usage: /chunk
+      permission: chunkwatcher.chankinfo
 
 
 
@@ -24,5 +28,8 @@ permission:
     default: true
   chunkwatcher.worldinfo:
     description: Выводит информацию о мирах в чат.
+    default: true
+  chunkwatcher.chankinfo:
+    description: Выводит информацию о чанке в чат.
     default: true
 
