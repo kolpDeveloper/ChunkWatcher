@@ -27,7 +27,7 @@ try {
     getLogger().info("Chunk locker is enabled");
 
 } catch (Exception e) {
-    e.printStackTrace();
+    getLogger().severe("Chunk Watcher could not be enabled");
 }
     }
 
