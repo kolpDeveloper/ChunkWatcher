@@ -31,14 +31,13 @@ public class WorldInfo implements CommandExecutor {
         }
 
         Player player = (Player) commandSender;
-         World world = player.getWorld();
-        getFullInfo(world,player);
+        getFullInfo(player);
 
         return true;
     }
 
 
-    void getFullInfo(World world, Player player ) {
+    void getFullInfo(Player player ) {
 
         List<WorldInfoData> worldInfoList = Bukkit.getWorlds()
                         .stream()
