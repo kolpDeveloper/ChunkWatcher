@@ -13,13 +13,11 @@ import java.util.List;
 
 public class WorldInfo implements CommandExecutor {
 
-    private final main plugin;
-
+    private  final main plugin;
 
     public WorldInfo(main plugin) {
         this.plugin = plugin;
     }
-
 
     @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
@@ -57,4 +55,5 @@ public class WorldInfo implements CommandExecutor {
         }
 
     }
+
 }
