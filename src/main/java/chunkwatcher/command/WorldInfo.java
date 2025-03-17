@@ -34,14 +34,13 @@ public class WorldInfo implements CommandExecutor {
 
         Player player = (Player) commandSender;
          World world = player.getWorld();
-         Block block = world.getBlockAt(player.getLocation());
-        getFullInfo(world,player,block);
+        getFullInfo(world,player);
 
         return true;
     }
 
 
-    void getFullInfo(World world, Player player, Block block) {
+    void getFullInfo(World world, Player player ) {
 
         List<WorldInfoData> worldInfoList = Bukkit.getWorlds()
                         .stream()
@@ -54,7 +53,7 @@ public class WorldInfo implements CommandExecutor {
                             e.getGameTime(),
                             e.getPVP()
                 ))
-                .collect(Collectors.toList());
+                .toList();
 
         player.sendMessage("World Information:");
         for (WorldInfoData info : worldInfoList) {
