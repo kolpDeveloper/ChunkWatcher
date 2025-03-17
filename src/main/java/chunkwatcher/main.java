@@ -10,23 +10,25 @@ public final class main extends JavaPlugin  {
         // Plugin startup logic
 
 
+try {
+    getCommand("chunk").setExecutor(new ChunkInfo(this));
+    getLogger().info("Chunk Watcher is enabled");
 
-        getCommand("chunk").setExecutor(new ChunkInfo(this));
-        getLogger().info("Chunk Watcher is enabled");
+    getCommand("nearby").setExecutor(new NearbyEntities(this));
+    getLogger().info("NearbyInfo is enabled");
 
-        getCommand("nearby").setExecutor(new NearbyEntities(this));
-        getLogger().info("NearbyInfo is enabled");
+    getCommand("world").setExecutor(new WorldInfo(this));
+    getLogger().info("WorldInfo is enabled");
 
-        getCommand("world").setExecutor(new WorldInfo(this));
-        getLogger().info("WorldInfo is enabled");
+    getCommand("chunkr").setExecutor(new ChunkRelease(this));
+    getLogger().info("Chunk Release is enabled");
 
-        getCommand("chunkr").setExecutor(new ChunkRelease(this));
-        getLogger().info("Chunk Release is enabled");
+    getCommand("chunkl").setExecutor(new LockChunk(this));
+    getLogger().info("Chunk locker is enabled");
 
-        getCommand("chunkl").setExecutor(new LockChunk(this));
-        getLogger().info("Chunk locker is enabled");
-
-
+} catch (Exception e) {
+    e.printStackTrace();
+}
     }
 
     @Override
