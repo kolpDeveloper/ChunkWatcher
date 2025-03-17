@@ -28,7 +28,7 @@ public class LockChunk implements CommandExecutor {
 
 
         player.sendMessage("Start processing.");
-        if(chunkManager.lockChunk(chunk,player) == false){
+        if(!chunkManager.lockChunk(chunk,player)){
             player.sendMessage("Lock stopped.");
             return false;
         }
