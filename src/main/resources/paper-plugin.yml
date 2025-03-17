@@ -19,6 +19,14 @@ commands:
       description: Bыводит информацию о чанке в чат.
       usage: /chunk
       permission: chunkwatcher.chankinfo
+  chunkrelease:
+    description: Команда для освобождения чанков.
+    usage: /chunkr
+    permission: chunkwatcher.chunkrelease
+  lockchunk:
+    description: Команда для блокировки чанка.
+    usage: /chunkl
+    permission: chunkwatcher.lockchunk
 
 
 
@@ -32,4 +40,9 @@ permission:
   chunkwatcher.chankinfo:
     description: Выводит информацию о чанке в чат.
     default: true
-
+  chunkwatcher.chunkrelease:
+    description: Команда для освобождения чанков.
+    default: true
+  chunkwatcher.lockchunk:
+    description: Команда для блокировки чанка.
+    default: true

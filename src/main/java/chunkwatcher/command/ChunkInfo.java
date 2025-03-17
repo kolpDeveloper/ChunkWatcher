@@ -1,5 +1,6 @@
 package chunkwatcher.command;
 
+import chunkwatcher.manager.ChunkManager;
 import org.bukkit.ChatColor;
 import org.bukkit.Chunk;
 import org.bukkit.Material;
@@ -12,6 +13,8 @@ import org.jetbrains.annotations.NotNull;
 public class ChunkInfo implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
+
+        ChunkManager chunkManager = new ChunkManager();
 
         if(!(commandSender instanceof Player player)) {
             commandSender.sendMessage("You must be a player to use this command.");
@@ -37,7 +40,8 @@ public class ChunkInfo implements CommandExecutor {
         player.sendMessage(String.valueOf(material));
 
 
-
+        player.sendMessage("Chunk owner is: ");
+        chunkManager.getChunkOwner(chunk);
 
         return true;
     }
