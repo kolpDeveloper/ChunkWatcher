@@ -31,7 +31,7 @@ public class ChunkInfo implements CommandExecutor {
 
         Chunk chunk = player.getLocation().getChunk();
 
-        player.sendMessage(ChatColor.RED + "Chunk information:");
+        player.sendMessage("Chunk information:");
         player.sendMessage(chunk.getX() + " " + chunk.getZ());
 
 
@@ -44,7 +44,7 @@ public class ChunkInfo implements CommandExecutor {
 
 
         Material material = chunk.getBlock(chunkX,worldY,chunkZ).getType();
-        player.sendMessage(ChatColor.RED + "Block type:");
+        player.sendMessage("Block type:");
         player.sendMessage(String.valueOf(material));
 
 
