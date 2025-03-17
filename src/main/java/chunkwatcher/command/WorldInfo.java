@@ -1,6 +1,7 @@
 package chunkwatcher.command;
 
 import chunkwatcher.data.WorldInfoData;
+import chunkwatcher.main;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
 import org.bukkit.block.Block;
@@ -15,6 +16,12 @@ import java.util.stream.Collectors;
 
 public class WorldInfo implements CommandExecutor {
 
+    private final main plugin;
+
+
+    public WorldInfo(main plugin) {
+        this.plugin = plugin;
+    }
 
 
     @Override

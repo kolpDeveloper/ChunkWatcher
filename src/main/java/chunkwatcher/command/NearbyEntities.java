@@ -1,5 +1,6 @@
 package chunkwatcher.command;
 
+import chunkwatcher.main;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -11,7 +12,14 @@ import java.util.ArrayList;
 
 public class NearbyEntities implements CommandExecutor {
 
+    private final main plugin;
+
     public static final double RADIUS = 20.0;
+
+
+    public NearbyEntities(main plugin) {
+        this.plugin = plugin;
+    }
 
     @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String label, @NotNull String[] strings) {

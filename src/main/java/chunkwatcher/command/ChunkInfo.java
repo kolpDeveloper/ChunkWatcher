@@ -1,5 +1,6 @@
 package chunkwatcher.command;
 
+import chunkwatcher.main;
 import chunkwatcher.manager.ChunkManager;
 import org.bukkit.ChatColor;
 import org.bukkit.Chunk;
@@ -11,6 +12,13 @@ import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 public class ChunkInfo implements CommandExecutor {
+
+    private final main plugin;
+
+    public ChunkInfo(main plugin) {
+        this.plugin = plugin;
+    }
+
     @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
 
