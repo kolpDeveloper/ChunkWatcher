@@ -26,3 +26,5 @@
 ### /chunkrelease — removes tracking or locking. I am writing on the paper core, help to configure the file to work with it
 ### /nearby — shows what kind of living entities are nearby
 ### /world — displays information about the worlds
+### /chunkr — the command to release the chunks
+### /chunkl — command to lock the chunk
