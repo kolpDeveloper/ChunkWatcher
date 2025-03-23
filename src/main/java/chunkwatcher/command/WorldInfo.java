@@ -3,6 +3,7 @@ package chunkwatcher.command;
 import chunkwatcher.data.WorldInfoData;
 import chunkwatcher.main;
 import org.bukkit.Bukkit;
+import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -50,7 +51,7 @@ public class WorldInfo implements CommandExecutor {
                 .toList();
 
         player.sendMessage("World Information:");
-        for (WorldInfoData info : worldInfoList) {
+        for (Object info : worldInfoList) {
             player.sendMessage(info.toString());
         }
 

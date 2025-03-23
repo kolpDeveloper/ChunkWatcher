@@ -2,7 +2,6 @@ package chunkwatcher.command;
 
 import chunkwatcher.main;
 import chunkwatcher.manager.ChunkManager;
-import org.bukkit.ChatColor;
 import org.bukkit.Chunk;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -13,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class ChunkInfo implements CommandExecutor {
 
-    private final main plugin;
+    private main plugin;
 
     public ChunkInfo(main plugin) {
         this.plugin = plugin;
@@ -29,7 +28,10 @@ public class ChunkInfo implements CommandExecutor {
             return true;
         }
 
+
+
         Chunk chunk = player.getLocation().getChunk();
+
 
         player.sendMessage("Chunk information:");
         player.sendMessage(chunk.getX() + " " + chunk.getZ());

@@ -10,7 +10,7 @@ import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 public class ChunkRelease implements CommandExecutor {
-private final main plugin;
+private main plugin;
 
     public ChunkRelease(main plugin) {
         this.plugin = plugin;
