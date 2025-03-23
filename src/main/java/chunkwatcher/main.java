@@ -43,7 +43,9 @@ public final class main extends JavaPlugin  {
             public boolean execute(org.bukkit.command.CommandSender sender, String commandLabel, String[] args) {
                 return executor.onCommand(sender, this, commandLabel, args);
             }
+
         });
+        getLogger().info("Registered command" + name);
     }
 
     @Override
@@ -51,5 +53,6 @@ public final class main extends JavaPlugin  {
         // Plugin shutdown logic
 
         saveConfig();
+        getLogger().info("Turned off command");
     }
 }
