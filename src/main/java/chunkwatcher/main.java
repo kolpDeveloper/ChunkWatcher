@@ -1,7 +1,11 @@
 package chunkwatcher;
 
 import chunkwatcher.command.*;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.jetbrains.annotations.NotNull;
 
 public final class main extends JavaPlugin  {
 
@@ -10,26 +14,36 @@ public final class main extends JavaPlugin  {
         // Plugin startup logic
         getLogger().info("TEST ");
 
-        getCommand("chunk").setExecutor(new ChunkInfo(this));
-        getLogger().warning("Chunk Watcher is enabled");
+
 
         try {
 
-    getCommand("nearby").setExecutor(new NearbyEntities(this));
-            getLogger().warning("NearbyInfo is enabled");
+            registerCommand("chunkinfo", "Выводит информацию о чанке", "/chunk", new ChunkInfo(this));
+            registerCommand("nearbyspawn", "Показывает живые сущности поблизости", "/nearby", new NearbyEntities(this));
+            registerCommand("worldinfo", "Выводит информацию о мирах", "/world", new WorldInfo(this));
+            registerCommand("chunkrelease", "Освобождает чанки", "/chunkr", new ChunkRelease(this));
+            registerCommand("lockchunk", "Блокирует чанк", "/chunkl", new LockChunk(this));
 
-    getCommand("world").setExecutor(new WorldInfo(this));
-            getLogger().warning("WorldInfo is enabled");
-
-    getCommand("chunkr").setExecutor(new ChunkRelease(this));
-            getLogger().warning("Chunk Release is enabled");
-
-    getCommand("chunkl").setExecutor(new LockChunk(this));
-            getLogger().warning("Chunk locker is enabled");
 
 } catch (Exception e) {
             getLogger().warning("Chunk Watcher could not be enabled");
 }
+    }
+
+
+    private void registerCommand(String name, String description, String usage, CommandExecutor executor) {
+        getServer().getCommandMap().register("chunkwatcher", new org.bukkit.command.Command(name) {
+            {
+                this.setDescription(description);
+                this.setUsage(usage);
+                this.setPermission("chunkwatcher." + name);
+            }
+
+            @Override
+            public boolean execute(org.bukkit.command.CommandSender sender, String commandLabel, String[] args) {
+                return executor.onCommand(sender, this, commandLabel, args);
+            }
+        });
     }
 
     @Override
