@@ -1,14 +1,20 @@
 package chunkwatcher.data;
 
-import lombok.AllArgsConstructor;
 
-@AllArgsConstructor
 public class WorldInfoData {
     private int playerCount;
     private long fullTime;
     private String name;
     private long gameTime;
     private boolean pvpEnabled;
+
+    public WorldInfoData(int playerCount, long fullTime, String name, long gameTime, boolean pvpEnabled) {
+        this.playerCount = playerCount;
+        this.fullTime = fullTime;
+        this.name = name;
+        this.gameTime = gameTime;
+        this.pvpEnabled = pvpEnabled;
+    }
 
     @Override
     public String toString() {
