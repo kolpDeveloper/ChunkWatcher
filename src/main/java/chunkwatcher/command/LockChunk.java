@@ -9,6 +9,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
 public class LockChunk implements CommandExecutor {
     private final main plugin;
 
@@ -17,7 +19,9 @@ public class LockChunk implements CommandExecutor {
     }
 
     @Override
-    public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
+    @ParametersAreNonnullByDefault
+    public boolean onCommand( CommandSender commandSender, Command command,String s, String[] strings) {
+
         if(!(commandSender instanceof Player player)){
             return true;
         }

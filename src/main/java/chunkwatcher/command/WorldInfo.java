@@ -10,6 +10,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 
 public class WorldInfo implements CommandExecutor {
@@ -21,7 +22,8 @@ public class WorldInfo implements CommandExecutor {
     }
 
     @Override
-    public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
+    @ParametersAreNonnullByDefault
+    public boolean onCommand( CommandSender commandSender, Command command,String s, String[] strings) {
 
          if(!(commandSender instanceof Player )) {
             commandSender.sendMessage("This command can only be executed by a player");

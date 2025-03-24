@@ -10,6 +10,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
 public class ChunkInfo implements CommandExecutor {
 
     private main plugin;
@@ -19,7 +21,8 @@ public class ChunkInfo implements CommandExecutor {
     }
 
     @Override
-    public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
+    @ParametersAreNonnullByDefault
+    public boolean onCommand( CommandSender commandSender, Command command,String s, String[] strings) {
 
         ChunkManager chunkManager = new ChunkManager();
 
