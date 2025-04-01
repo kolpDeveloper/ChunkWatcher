@@ -1,8 +1,10 @@
 package chunkwatcher;
 
-import chunkwatcher.command.*;
+import chunkwatcher.commands.*;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import javax.annotation.ParametersAreNonnullByDefault;
 
 public final class main extends JavaPlugin  {
 
@@ -29,20 +31,24 @@ public final class main extends JavaPlugin  {
 
 
     private void registerCommand(String name, String description, String usage, CommandExecutor executor) {
-        getServer().getCommandMap().register("chunkwatcher", new org.bukkit.command.Command(name) {
-            {
-                this.setDescription(description);
-                this.setUsage(usage);
-                this.setPermission("chunkwatcher." + name);
-            }
-
+        org.bukkit.command.Command command = new org.bukkit.command.Command(name) {
             @Override
+            @ParametersAreNonnullByDefault
             public boolean execute(org.bukkit.command.CommandSender sender, String commandLabel, String[] args) {
                 return executor.onCommand(sender, this, commandLabel, args);
             }
+        };
 
-        });
-        getLogger().info("Registered command" + name);
+        command.setDescription(description);
+        command.setUsage(usage);
+        command.setPermission("chunkwatcher." + name);
+
+        try {
+            getServer().getCommandMap().register("chunkwatcher", command);
+            getLogger().info("Registered command: " + name);
+        } catch (Exception e) {
+            getLogger().warning("Could not register command " + name + ": " + e.getMessage());
+        }
     }
 
     @Override

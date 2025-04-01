@@ -1,4 +1,4 @@
-package chunkwatcher.manager;
+package chunkwatcher.managers;
 
 import chunkwatcher.data.ChunkCoordinate;
 import org.bukkit.Chunk;

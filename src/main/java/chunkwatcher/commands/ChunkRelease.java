@@ -1,13 +1,12 @@
-package chunkwatcher.command;
+package chunkwatcher.commands;
 
 import chunkwatcher.main;
-import chunkwatcher.manager.ChunkManager;
+import chunkwatcher.managers.ChunkManager;
 import org.bukkit.Chunk;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 

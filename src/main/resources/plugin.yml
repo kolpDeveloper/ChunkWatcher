@@ -1,0 +1,52 @@
+name: ChunkWatcher
+version: '1.0-SNAPSHOT'
+main: chunkwatcher.main
+api-version: '1.20'
+author: eblxd
+description: Плагин для управления и защиты чанков на сервере с дополнительным функционалом.
+
+
+commands:
+  chunkinfo:
+    description: Выводит информацию о чанке
+    usage: /chunk
+    permission: chunkwatcher.chunkinfo
+
+  nearbyspawn:
+    description: Показывает живые сущности поблизости
+    usage: /nearby
+    permission: chunkwatcher.nearbyspawn
+
+  worldinfo:
+    description: Выводит информацию о мирах
+    usage: /world
+    permission: chunkwatcher.worldinfo
+
+  chunkrelease:
+    description: Освобождает чанки
+    usage: /chunkr
+    permission: chunkwatcher.chunkrelease
+
+  lockchunk:
+    description: Блокирует чанк
+    usage: /chunkl
+    permission: chunkwatcher.lockchunk
+
+  permission:
+    chunkwatcher.nearbyspawn:
+      description: Разрешает использовать команду /nearby.
+      default: true
+    chunkwatcher.worldinfo:
+      description: Выводит информацию о мирах в чат.
+      default: true
+    chunkwatcher.chankinfo:
+      description: Выводит информацию о чанке в чат.
+      default: true
+    chunkwatcher.chunkrelease:
+      description: Команда для освобождения чанков.
+      default: true
+    chunkwatcher.lockchunk:
+      description: Команда для блокировки чанка.
+      default: true
+
+
