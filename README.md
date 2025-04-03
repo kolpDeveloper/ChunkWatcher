@@ -28,3 +28,6 @@
 ### /world — displays information about the worlds
 ### /chunkr — the command to release the chunks
 ### /chunkl — command to lock the chunk
+
+
+#This soft declared a MIT licence
