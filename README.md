@@ -30,4 +30,4 @@
 ### /chunkl — command to lock the chunk
 
 
-#This soft declared a MIT licence
+# This soft declared a MIT licence
