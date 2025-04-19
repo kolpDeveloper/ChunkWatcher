@@ -10,7 +10,6 @@ public final class main extends JavaPlugin  {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
         getLogger().info("TEST ");
 
 
@@ -53,7 +52,6 @@ public final class main extends JavaPlugin  {
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
 
         saveConfig();
         getLogger().info("Turned off command");
